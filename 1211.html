@@ -1,10 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+    	body{
+    		margin:0px;
+		}
+		.header {
+		    background-color: orange;
+		    color: white;
+		    padding: 15px;
+		}
+		.menu ul {
+		    list-style-type: none; /* 去掉項目符號 */
+		    margin: 0px;
+		    padding: 0px;
+		}
+		.menu li {
+		    padding: 8px;
+		    margin-bottom: 7px;
+		    background-color: #33b5e5;
+		    color: white;
+		    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);/*陰影*/
+		}
+		.menu li:hover { /*:hover位元素 滑鼠移上變深*/
+		    background-color: #0099cc;
+		}
+		.footer {
+		    background-color: green;
+		    color: white;
+		    text-align: center;
+		    font-size: 16px;
+		    padding: 5px;
+		}
+		* {  /* * 對所有的標籤做設定 border-box最大都不會超過所設定的東西*/
+    		box-sizing: border-box;
+    		font-family: Microsoft JhengHei;
+		}
+		[class*="col-"] {  /*優先以手機設定*/
+		    float: left;
+		    padding: 15px;
+		    width: 100%; /* For mobile: 0px ~ 600px */
+		}
+		@media only screen and (min-width: 600px) {  /*平板600-768*/
+		    .col-s-1 {width: 8.33%;}
+		    .col-s-2 {width: 16.66%;}
+		    .col-s-3 {width: 25%;}
+		    .col-s-4 {width: 33.33%;}
+		    .col-s-5 {width: 41.66%;}
+		    .col-s-6 {width: 50%;}
+		    .col-s-7 {width: 58.33%;}
+		    .col-s-8 {width: 66.66%;}
+		    .col-s-9 {width: 75%;}
+		    .col-s-10 {width: 83.33%;}
+		    .col-s-11 {width: 91.66%;}
+		    .col-s-12 {width: 100%;}
+		}
+		@media only screen and (min-width: 768px) {   /*桌機768以上*/
+		    .col-1 {width: 8.33%;}
+		    .col-2 {width: 16.66%;}
+		    .col-3 {width: 25%;}
+		    .col-4 {width: 33.33%;}
+		    .col-5 {width: 41.66%;}
+		    .col-6 {width: 50%;}
+		    .col-7 {width: 58.33%;}
+		    .col-8 {width: 66.66%;}
+		    .col-9 {width: 75%;}
+		    .col-10 {width: 83.33%;}
+		    .col-11 {width: 91.66%;}
+		    .col-12 {width: 100%;}
+		}
+		.row::after { /* ::after 偽元素*/
+		    content: "";     /*欲插入的""內容接續在.row後面*/
+		    clear: both; 	 /*左右兩側均不允許浮動元素。*/
+		    display: block;  /* 會換行 (.row以後的東西換到下面去)*/
+		}
+    </style>
 </head>
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 <body>
+<div class="header">
+  <h1>我的範例</h1>
+</div>
 
+<div class="row"><!--row start-->
+  <div class="col-12 col-sm-3 menu">
+    <p>前程四緊：</p>
+    <ul>
+      <li>手頭緊</li>
+      <li>眉頭緊</li>
+      <li>衣服緊</li>
+      <li>時間緊</li>
+    </ul>
+  </div>
+
+  <div class="col-5 col-s-9">
+    <h1>爆笑經典名句</h1>
+    <p>壓力始終來自於新台幣。</p>
+    <p>問君能有幾副肝，恰似一串鞭炮爆不完。</p>
+    <p>青春就像衛生紙。看著挺多的，用著用著就不夠了。</p>
+  </div>
+
+  <div class="col-4 col-s-12 aside">
+      <img src="https://i.ytimg.com/vi/fN0Gmd9FK3c/maxresdefault.jpg"style="width:100%;">
+  </div>
+</div><!--row end-->
+
+<div class="footer">
+  <p>我是footer</p>
+</div>
 </body>
 </html>
